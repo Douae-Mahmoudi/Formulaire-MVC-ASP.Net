@@ -1,0 +1,53 @@
+﻿@model WebApplication3.Models.Conge 
+
+@{
+    ViewData["Title"] = "Confirmation de Demande";
+}
+
+<h1>Confirmation de Demande de Congé</h1>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+<div>
+    <h4>Détails de votre demande :</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+        @* Add other properties you want to display *@
+    </dl>
+</div>
+<div class="mt-3">
+    <a asp-action="Demande" class="btn btn-primary">Faire une autre demande</a>
+    <a asp-action="Index" class="btn btn-secondary">Voir toutes les demandes</a>
+</div>

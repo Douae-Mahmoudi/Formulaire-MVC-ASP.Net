@@ -1,0 +1,29 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:12345", // This port might be different for you
+      "sslPort": 7150 // <--- THIS IS THE HTTPS PORT FOR IIS EXPRESS
+    }
+  },
+  "profiles": {
+    "WebApplication3": { // This is the profile you provided for Kestrel
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7150;http://localhost:5000", // <--- Place your changes here for Kestrel
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "IIS Express": { // This is the profile you provided for IIS Express
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

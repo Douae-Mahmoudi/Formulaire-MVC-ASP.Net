@@ -1,0 +1,51 @@
+﻿@model WebApplication3.Models.Conge
+
+@{
+    ViewData["Title"] = "Supprimer le Congé";
+}
+
+<h1>Supprimer le Congé</h1>
+
+<h3>Êtes-vous sûr de vouloir supprimer ceci ?</h3>
+<div>
+    <h4>Congé</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" /> @* L'ID est masqué pour la suppression *@
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a asp-action="Index">Retour à la liste</a>
+    </form>
+</div>

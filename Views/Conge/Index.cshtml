@@ -1,0 +1,62 @@
+﻿@model IEnumerable<WebApplication3.Models.Conge> // Important: Le modèle est une collection (IEnumerable)
+
+@{
+    ViewData["Title"] = "Liste des Demandes de Congé";
+}
+
+<h1>Liste des Demandes de Congé</h1>
+
+<p>
+    <a asp-action="Demande" class="btn btn-success">Créer une nouvelle demande</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th> @* Colonne pour les actions (Modifier, Détails, Supprimer) *@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reason)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @* Ces liens utilisent les Tag Helpers ASP.NET Core pour générer les URL *@
+                    <a asp-action="Edit" asp-route-id="@item.Id">Modifier</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Détails</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
